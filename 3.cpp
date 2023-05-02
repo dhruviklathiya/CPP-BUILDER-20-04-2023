@@ -61,7 +61,10 @@ int main(){
     cin>>h;
     obj.setter(a,b,c,d,e,f,g,h);
     obj.printer();
+    return 0;
 }
+
+// Way 2:
 
 // #include<iostream>
 // #include<string.h>
