@@ -49,7 +49,9 @@ public:
         cout<<"Student is in following college: "<<this->stu_college<<endl;
     }
 };
-
+class Student2{
+    student1 abcobj;
+};
 int main(){
     student1 s[5];
     int i;
