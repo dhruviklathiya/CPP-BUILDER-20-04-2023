@@ -1,54 +1,66 @@
-#include<iostream>
-#include<string.h>
+#include <iostream>
 using namespace std;
 class Train
 {
-private:
-    int train_number;
-    char train_name[30];
-    char train_source[30];
-    char train_destination[30];
-    char train_time[10];
 public:
-    void getter(){
-        cout<<"Enter train number:";
-        cin>>this->train_number;
-        cout<<"Enter train name:";
-        cin>>this->train_name;
-        cout<<"Enter train source location:";
-        cin>>this->train_source;
-        cout<<"Enter train destination location:";
-        cin>>this->train_destination;
-        cout<<"Enter train time:[DO INCLUDE AM/PM]";
-        cin>>this->train_time;
-    }
+    int Train_Number;
+    char Train_Name[20];
+    char Train_Source[20];
+    char Train_Destination[20];
+    char Train_Time[20];
     void setter(){
-        this->train_number = train_number;
-        strcpy(this->train_name,train_name);
-        strcpy(this->train_source,train_source);
-        strcpy(this->train_destination,train_destination);
-        strcpy(this->train_time,train_time);
+        cout<<"Train number";
+        cin>>Train_Number;
+        cout<<"Train name";
+        cin>>Train_Name;
+        cout<<"Train source";
+        cin>>Train_Source;
+        cout<<"Train Destination";
+        cin>>Train_Destination;
+        cout<<"Train Time";
+        cin>>Train_Time;
     }
-    void printer(){
-        cout<<"Train's number is: "<<this->train_number<<endl;
-        cout<<"Train's name is: "<<this->train_name<<endl;
-        cout<<"Train's source location is: "<<this->train_source<<endl;
-        cout<<"Train's destination location is: "<<this->train_destination<<endl;
-        cout<<"Train's time is: "<<this->train_time<<endl;
+    void getter(){
+        cout<<"Train number: "<<Train_Number<<endl;
+        cout<<"Train name: "<<Train_Name<<endl;
+        cout<<"Train source: "<<Train_Source<<endl;
+        cout<<"Train destination: "<<Train_Destination<<endl;
+        cout<<"Train time: "<<Train_Time<<endl;
+    }
+    int checker(){
+        return Train_Number;
     }
 };
-int main (){
-    int n,i,j;
-    cout<<"How many train's content do you wanna enter?";
-    cin>>n;
-    Train t[n];
-    for (i = 0; i < n; i++)
-    {
-        t[i].getter();
-        t[i].setter();
+int main()
+{   
+    int mm;
+    cout<<"How many train data do you want?";
+    cin>>mm;
+    Train arryofobj[mm];
+    int i,n;
+    for(i=0;i<mm;i++){
+        arryofobj[i].setter();
     }
-    cout<<"Which train detail do you wanna print?";
-    cin>>j;
-    t[j-1].printer();
-    return 0;
+    for(i=0;i<mm;i++){
+        arryofobj[i].getter();
+    }
+    cout<<"Which train data do you want?";
+    cin>>n;
+    for(i=0;i<mm;i++){
+        if(n == arryofobj[i].checker()){
+            arryofobj[i].getter();
 }
+    }
+}
+
+// HINT:
+//     return train_number;
+// }
+
+// int number = 123456;
+
+// if(number == obj[i].set()){
+
+//     obj[i].get();
+
+// }
